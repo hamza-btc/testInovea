@@ -1,0 +1,12 @@
+.scroll {
+    overflow-y: scroll;
+    height: 600px; 
+}    
+.card {
+    background-color: #191d20;
+    color: #fff;
+    font-size: 14px;
+}
+a{
+    color: #fff;
+}
