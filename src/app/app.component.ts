@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testInovea';
+  handeleNotify($event : any){
+    
+console.log('eventt',$event)
+  }
+
 }

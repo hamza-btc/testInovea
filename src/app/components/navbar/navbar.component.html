@@ -1,35 +1,27 @@
 
-<nav class="navbar navbar-light bg-dark">
+
+<nav class="navbar navbar-light bg-dark p-2 mx-4">
     <div class="container-fluid">
-         <div class="input-group">
-            </div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg- d-flex navbarcss">
+        <li class="nav-item me-3 ">
+           <a  routerLink="/home" class="nav-link active" >Home</a>
+        </li>
+        <li class="nav-item nav-link me-3">
+          <a  routerLink="/about" class="nav-link active" >About</a>
+       </li>
+       <li class="nav-item nav-link me-3">
+        <a  routerLink="/contact" class="nav-link active"  >Contact</a>
+     </li>
+        </ul>
       <form class="">
         <i class="fa fa-search search"></i>
-        <input class="form-control me-2 icone-loupe searchstyle" type="search" placeholder="Chercher un modèle 3D" aria-label="Search">
+        <input (input)="searchModel()" [(ngModel)]="searchText" name="search"
+        class="form-control me-2 icone-loupe searchstyle" type="search" placeholder="Chercher un modèle 3D" aria-label="Search">
       </form>
-      <button  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+      <button  class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa fa-plus "></i>
     Ajouter un modèle 3D
     </button>
-</div>
-  </nav>
-
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
   </div>
+  </nav>
+  

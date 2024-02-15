@@ -8,9 +8,17 @@
     border: none;
     border-radius: 7px;
     padding-left: 34px;
+    color: #fff;
 }
 input::placeholder {
     color: #6E757D;
   }
-
+.navbarcss {
+    flex-direction: row;
+    align-items: center;
+    
+}
+.navbarcss li a {
+    color: #fff;
+}
   

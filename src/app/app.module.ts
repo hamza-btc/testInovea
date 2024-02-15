@@ -9,6 +9,12 @@ import { ListmodeledetailComponent } from './components/listmodeledetail/listmod
 import { AjoutmodeleComponent } from './components/ajoutmodele/ajoutmodele.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './components/ajoutmodele/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,16 +22,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     ListmodeleComponent,
     ListmodeledetailComponent,
-    AjoutmodeleComponent
+    AjoutmodeleComponent,
+    AboutComponent,
+    ContactComponent,
+    NotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideHttpClient(withFetch())
+    // provideClientHydration()
   ],
   bootstrap: [AppComponent]
 })

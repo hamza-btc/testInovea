@@ -1,37 +1,46 @@
-import { Component, inject, TemplateRef } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { ImagesService } from '../../services/images.service';
+import { Model } from '../../models/model';
 
 @Component({
   selector: 'app-ajoutmodele',
   templateUrl: './ajoutmodele.component.html',
   styleUrl: './ajoutmodele.component.css'
 })
-export class AjoutmodeleComponent {
-  // private modalService = inject(NgbModal);
-	closeResult = '';
-constructor(private modalService : NgbModal){}
 
-	open(content: TemplateRef<any>) {
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-			(result) => {
-				this.closeResult = `Closed with: ${result}`;
-			},
-			(reason) => {
-				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-			},
-		);
-	}
+export class AjoutmodeleComponent implements OnInit{
+resultatadd : Model[] = [];
+submitted = false;
+@ViewChild('closeModal') closeModal: ElementRef
 
-	private getDismissReason(reason: any): string {
-		switch (reason) {
-			case ModalDismissReasons.ESC:
-				return 'by pressing ESC';
-			case ModalDismissReasons.BACKDROP_CLICK:
-				return 'by clicking on a backdrop';
-			default:
-				return `with: ${reason}`;
-		}
-	}
+ngOnInit(){
+	this.httpSerivce.getAll().subscribe(res=>{
+		this.resultatadd = res;
+		console.log('this.resultatad',this.resultatadd);
+	})
+
+}
+constructor(private httpSerivce:ImagesService){}
+addimage () {
+	
+}
+
+
+
+ onSubmit(modelimage:Model) {
+	console.log('form sumitted',modelimage);
+	//  this.httpSerivce.addModels(modelimage).subscribe( res => {
+	//  this.resultatadd = res;
+	//  console.log('res',res)
+	// }
+
+
+}
+
+// addModelImgae
+
+
 }
